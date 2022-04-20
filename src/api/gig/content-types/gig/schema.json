@@ -1,0 +1,87 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gigs",
+  "info": {
+    "singularName": "gig",
+    "pluralName": "gigs",
+    "displayName": "Gig",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "category": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "country": {
+      "type": "string",
+      "required": true
+    },
+    "spots": {
+      "type": "integer",
+      "default": 1,
+      "min": 0
+    },
+    "start": {
+      "type": "date"
+    },
+    "end": {
+      "type": "date"
+    },
+    "duration": {
+      "type": "integer",
+      "min": 0
+    },
+    "price": {
+      "type": "decimal",
+      "min": 0
+    },
+    "experience": {
+      "type": "text"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true
+    },
+    "freelancer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::client.client",
+      "inversedBy": "gigs"
+    },
+    "location": {
+      "type": "component",
+      "repeatable": true,
+      "component": "gig.location"
+    },
+    "openingHours": {
+      "displayName": "openingHours",
+      "type": "component",
+      "repeatable": true,
+      "component": "gig.opening-hours",
+      "max": 7,
+      "min": 1
+    },
+    "options": {
+      "displayName": "options",
+      "type": "component",
+      "repeatable": true,
+      "component": "gig.options"
+    }
+  }
+}

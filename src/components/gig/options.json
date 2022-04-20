@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_gig_options",
+  "info": {
+    "displayName": "Options",
+    "icon": "plus-circle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal",
+      "min": 0
+    }
+  }
+}

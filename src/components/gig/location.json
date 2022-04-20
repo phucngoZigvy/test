@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_gig_locations",
+  "info": {
+    "displayName": "Location",
+    "icon": "male"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "coordinates": {
+      "type": "json"
+    }
+  }
+}

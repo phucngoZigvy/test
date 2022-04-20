@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_booking_statuses",
+  "info": {
+    "displayName": "PaymentStatus",
+    "icon": "info-circle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "freelancer": {
+      "type": "enumeration",
+      "enum": [
+        "REQUESTED",
+        "CONFIRMED",
+        "CANCELLED",
+        "COMPLETED"
+      ],
+      "default": "REQUESTED"
+    },
+    "customer": {
+      "type": "enumeration",
+      "enum": [
+        "REQUESTED",
+        "CONFIRMED",
+        "CANCELLED",
+        "COMPLETED"
+      ],
+      "default": "REQUESTED"
+    }
+  }
+}

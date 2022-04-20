@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clients",
+  "info": {
+    "singularName": "client",
+    "pluralName": "clients",
+    "displayName": "Client",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "username": {
+      "type": "string",
+      "required": false
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "password": {
+      "type": "password",
+      "required": true
+    },
+    "role": {
+      "type": "enumeration",
+      "enum": [
+        "CUSTOMER",
+        "FREELANCER"
+      ],
+      "default": "CUSTOMER"
+    },
+    "profile": {
+      "displayName": "Profile",
+      "type": "component",
+      "repeatable": false,
+      "component": "client.profile"
+    },
+    "bookings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::booking.booking",
+      "mappedBy": "freelancer"
+    },
+    "gigs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::gig.gig",
+      "mappedBy": "freelancer"
+    }
+  }
+}

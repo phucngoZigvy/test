@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bookings",
+  "info": {
+    "singularName": "booking",
+    "pluralName": "bookings",
+    "displayName": "Booking",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "notes": {
+      "type": "text"
+    },
+    "assignedAt": {
+      "type": "datetime"
+    },
+    "completedAt": {
+      "type": "datetime"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Requested",
+        "Confirmed",
+        "Cancelled",
+        "Completed"
+      ],
+      "default": "Requested"
+    },
+    "customer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::client.client",
+      "inversedBy": "bookings"
+    },
+    "freelancer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::client.client",
+      "inversedBy": "bookings"
+    },
+    "gig": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::gig.gig"
+    },
+    "paymentStatus": {
+      "type": "component",
+      "repeatable": false,
+      "component": "booking.status"
+    }
+  }
+}
